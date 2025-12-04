@@ -58,4 +58,27 @@ def b2 : Bool := false
 def α : Type := Nat
 def β : Type := Bool
 def F : Type -> Type := List
-def G : Type -> Type -> Type := λ X Y => X × Y
+def G : Type -> Type -> Type := Prod
+
+#check α
+#check β
+#check F α
+#check F β
+#check G α β
+#check G β Nat
+
+
+-- infinite hierarchy of types
+
+#check Type
+#check Type 1
+#check Type 2
+#check Type 3
+#check Type 4
+#check Type 5
+#check Type 6
+
+#check List
+
+def cons (α : Type) (x : α) (xs : List α) : List α :=
+  List.cons x xs
